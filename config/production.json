@@ -1,0 +1,7 @@
+{
+  "mongoURI": "mongodb+srv://dacuna97:pastoraleman1997@cluster0.vz2ml.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "c52cb2cebc9e8c938934",
+  "githubSecret": "79f21a1fdd7ee5f6bd1f36111c6ff26ecaa43411",
+  "origin": "https://lanzarote-guide.vercel.app"
+}
