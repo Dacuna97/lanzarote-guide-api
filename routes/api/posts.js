@@ -72,13 +72,20 @@ router.get('/', async (req, res) => {
       filter.type = req.query.type;
     }
     let posts = [];
+    let size = 9;
+    let offset = 0;
     if (req.query.size) {
-      posts = await Post.find(filter).limit(parseInt(req.query.size, 10));
-    } else {
-      posts = await Post.find(filter).limit(9);
+      size = parseInt(req.query.size, 10);
     }
-    console.log('posts', posts);
-    res.json(posts);
+    if (req.query.offset) {
+      offset = req.query.offset;
+    }
+
+    posts = await Post.find(filter).skip(offset).limit(size);
+
+    const count = await Post.count(filter);
+
+    res.json({ items: posts, count });
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server error');
