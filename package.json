@@ -4,7 +4,6 @@
   "description": "Lanzarote guide of places of interest",
   "main": "server.js",
   "scripts": {
-    "build": "netlify-lambda build server",
     "start": "node --optimize_for_size server",
     "server": "nodemon --optimize_for_size server",
     "dev": "concurrently \"npm run server\" \"npm run ../client\""
