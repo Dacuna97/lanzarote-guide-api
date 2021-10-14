@@ -75,7 +75,7 @@ router.get('/', async (req, res) => {
     if (req.query.size) {
       posts = await Post.find(filter).limit(parseInt(req.query.size, 10));
     } else {
-      posts = await Post.find(filter);
+      posts = await Post.find(filter).limit(9);
     }
     console.log('posts', posts);
     res.json(posts);
