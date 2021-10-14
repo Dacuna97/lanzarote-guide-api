@@ -78,7 +78,7 @@ router.get('/', async (req, res) => {
       size = parseInt(req.query.size, 10);
     }
     if (req.query.offset) {
-      offset = req.query.offset;
+      offset = parseInt(req.query.offset, 10);
     }
 
     posts = await Post.find(filter).skip(offset).limit(size);
