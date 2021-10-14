@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "build": "netlify-lambda build server",
-    "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 server",
-    "server": "nodemon --optimize_for_size --max_old_space_size=460 --gc_interval=100 server",
+    "start": "node --optimize_for_size server",
+    "server": "nodemon --optimize_for_size server",
     "dev": "concurrently \"npm run server\" \"npm run ../client\""
   },
   "repository": {

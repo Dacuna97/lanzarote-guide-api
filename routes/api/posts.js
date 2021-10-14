@@ -71,7 +71,12 @@ router.get('/', async (req, res) => {
     if (req.query.type) {
       filter.type = req.query.type;
     }
-    const posts = await Post.find(filter);
+    let posts = [];
+    if (req.query.size) {
+      posts = await Post.find(filter).limit(parseInt(req.query.size, 10));
+    } else {
+      posts = await Post.find(filter);
+    }
     console.log('posts', posts);
     res.json(posts);
   } catch (err) {
