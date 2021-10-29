@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dacuna97/lanzarote-guide.git"
+    "url": "git://github.com/Dacuna97/lanzarote-guide-api.git"
   },
   "keywords": [
     "guide",
