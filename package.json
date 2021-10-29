@@ -4,7 +4,7 @@
   "description": "Lanzarote guide of places of interest",
   "main": "server.js",
   "scripts": {
-    "start": "node NODE_ENV=production server",
+    "start": "NODE_ENV=production node server",
     "server": "nodemon --optimize_for_size server",
     "dev": "concurrently \"npm run server\" \"npm run ../client\""
   },
