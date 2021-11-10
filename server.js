@@ -2,14 +2,14 @@ const express = require('express');
 const config = require('config');
 const cors = require('cors');
 const fs = require('fs');
-const http = require('http');
-const https = require('https');
+// const http = require('http');
+// const https = require('https');
 const connectDB = require('./config/db');
 const path = require('path');
 const privateKey = fs.readFileSync('./selfsigned.key', 'utf8');
 const certificate = fs.readFileSync('./selfsigned.crt', 'utf8');
 
-const credentials = { key: privateKey, cert: certificate };
+// const credentials = { key: privateKey, cert: certificate };
 
 const app = express();
 
@@ -41,6 +41,6 @@ app.use('/api/posts', require('./routes/api/posts'));
 // }
 
 const PORT = process.env.PORT || 3000;
-const httpsServer = https.createServer(credentials, app);
+// const httpsServer = https.createServer(credentials, app);
 
-httpsServer.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
